@@ -6,10 +6,14 @@
 # Step 1:
 # Create dockerpath
 # dockerpath=<your docker ID/path>
+dockerpath=ykankane/prediction_tool
 
 # Step 2:  
 # Authenticate & tag
 echo "Docker ID and Image: $dockerpath"
+docker login
+docker tag prediction_tool $dockerpath:version1
 
 # Step 3:
 # Push image to a docker repository
+docker push $dockerpath:version1
